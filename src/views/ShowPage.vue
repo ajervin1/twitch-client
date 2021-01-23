@@ -2,7 +2,7 @@
 	<section class="">
 		<h2>Show Page</h2>
 		<div class="embed-responsive embed-responsive-21by9">
-			<iframe :src="clip.embed_url + '&parent=localhost'" ></iframe>
+			<iframe :src="clip.embed_url + '&parent=twitchy.netlify.app'"></iframe>
 		</div>
 	
 	</section>
