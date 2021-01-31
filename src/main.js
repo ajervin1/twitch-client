@@ -4,8 +4,12 @@ import store from './store'
 import Router from 'vue-router'
 import HomePage from './views/HomePage'
 import ShowPage from './views/ShowPage'
+import FavoritePage from './views/FavoritePage'
+
 Vue.use(Router)
 Vue.config.productionTip = false
+
+// Router
 const router = new Router({
 	mode: 'history',
 	routes: [
@@ -16,9 +20,13 @@ const router = new Router({
 		{
 			path: '/clips/:id',
 			component: ShowPage
+		},
+		{
+			path: '/favorites',
+			component: FavoritePage
 		}
 	]
-});
+})
 
 new Vue({
 	router,

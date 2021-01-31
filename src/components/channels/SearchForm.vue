@@ -1,12 +1,9 @@
 <template>
-	<div class="w-25 form-container">
-		
+	<div class="w-25 form-container search-container">
 		<form class="d-flex align-items-center">
-		
-			<input @input="handleInput" type="search" placeholder="Search Channels" v-model='term' class="form-control rounded-right-0"/>
-			<div class="input-group-append bg-secondary p-3 px-4 rounded-right">
-				<i class="fa fa-search"></i>
-			</div>
+			<input @input.self="handleInput" type="search" placeholder="Search Channels"
+			       v-model='term'
+			       class="form-control rounded"/>
 		</form>
 		<ChannelList/>
 	</div>
@@ -24,13 +21,15 @@
 			}
 		},
 		methods: {
-			async handleInput () {
-				await this.$store.dispatch('searchChannels', this.term);
-				
+			async handleInput (e) {
+				console.log("search channels")
+				if (this.term !== ''){
+					await this.$store.dispatch('searchChannels', this.term)
+				}
 				setTimeout(() => {
 					this.$store.state.channels = []
 					this.term = ''
-				}, 9000)
+				}, 8000)
 			}
 		}
 	}
@@ -39,14 +38,17 @@
 	
 	/* Inline #2 | http://localhost:8080/?# */
 	
-	.w-25.form-container.mb-4 {
+	
+	.search-container {
 		position: relative;
 	}
 	
 	.list-group.channel-list {
 		position: absolute;
 		z-index: 2;
-		width: 100%;
+		right: 0;
+		left: 0;
+		
 	}
 
 </style>

@@ -1,12 +1,12 @@
 <template>
 	<ul class="list-group channel-list">
-		<li class="list-group-item d-flex justify-content-between align-items-center"
+		<li class="channel-item list-group-item d-flex justify-content-between align-items-center"
 		    v-for="channel in channels">
 			<div>
-				{{ channel.name }}
+				{{ channel.display_name }}
 			</div>
-			<button @click="handleClick(channel)" class="btn btn-primary btn-sm">
-				View Clips
+			<button @click="handleClick(channel)" class="btn font-size-xs btn-primary btn-sm">
+				<small>View Clips</small>
 			</button>
 		</li>
 	</ul>
@@ -29,3 +29,6 @@
 		}
 	}
 </script>
+<style>
+
+</style>

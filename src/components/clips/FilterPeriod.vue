@@ -1,7 +1,7 @@
 <template>
-	<div class="dropdown">
-		<button class="btn btn-secondary" data-toggle="dropdown">
-			Sort Time
+	<div class="dropdown mb-6">
+		<button class="btn btn-primary" data-toggle="dropdown">
+			Filter Time
 		</button>
 		<div class="dropdown-menu">
 			<a class="dropdown-item" href="#" @click="handleClick(filter)"
@@ -9,13 +9,16 @@
 				{{ filter }}
 			</a>
 		</div>
-		<span class="ml-4 badge badge-primary">
-			{{ period }}
+		<span class="ml-4 badge badge-success">
+			Top Clips This - {{ period }}
 		</span>
 	</div>
 </template>
 
 <script>
+	/*
+		Changes Period Which Also Alters The Clips
+	* */
 	export default {
 		name: 'FilterPeriod',
 		data () {

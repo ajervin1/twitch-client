@@ -11,13 +11,14 @@ const http = axios.create({
 		'Client-ID': 'mfytj1f03ko0k4uloqw0tgiusjkjqq'
 	},
 	params: {
-		limit: 3,
+		limit: 9,
 	}
 })
 
 
 const store = new Vuex.Store({
 	state: {
+		user: null,
 		// Filters
 		channelname: null,
 		period: 'week',
@@ -50,7 +51,7 @@ const store = new Vuex.Store({
 					channel: context.state.channelname,
 					period: context.state.period,
 					cursor: context.state.cursor,
-					limit: 3,
+					limit: 9,
 				}
 			})
 			const { clips, _cursor } = data
@@ -64,7 +65,7 @@ const store = new Vuex.Store({
 			const { data: { channels } } = await http.get('/search/channels', {
 				params: {
 					query: term,
-					limit: 3
+					limit: 5
 				}
 			})
 			context.commit('setChannels', channels)
@@ -77,7 +78,8 @@ const store = new Vuex.Store({
 			await context.dispatch('getTopClips')
 		},
 		async changeChannel (context, channel) {
-			context.commit('setChannel', channel)
+			context.commit('setChannel', channel);
+			store.state.clips = [];
 			await context.dispatch('getTopClips')
 		}
 	},

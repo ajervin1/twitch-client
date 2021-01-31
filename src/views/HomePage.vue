@@ -1,33 +1,20 @@
 <template>
-	<main>
-		<!--Search Form Channel List-->
-		<SearchForm/>
-		<!--Filter Period-->
-		<FilterPeriod class="mt-4"/>
-	
-		<!--Clips List-->
+	<div>
+		<FilterPeriod/>
 		<ClipsList/>
-		<!--Load More-->
-		<div class="mt-6">
-			<button class="btn btn-success d-block w-75 mx-auto" @click="handleClick">
-				Load More
-			</button>
-		</div>
-	</main>
+	</div>
 </template>
 
 <script>
-	import SearchForm from '../components/SearchForm'
-	import ClipsList from '../components/ClipsList'
-	import FilterPeriod from '../components/FilterPeriod'
+	
+	import { auth } from '../../db'
+	import firebase from 'firebase'
+	import FilterPeriod from '../components/clips/FilterPeriod'
+	import ClipsList from '../components/clips/ClipsList'
 	
 	export default {
 		name: 'HomePage',
-		components: { FilterPeriod, ClipsList, SearchForm },
-		methods: {
-			async handleClick () {
-				await this.$store.dispatch('getTopClips')
-			}
-		}
+		components: { ClipsList, FilterPeriod },
+		
 	}
 </script>
