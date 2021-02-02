@@ -1,15 +1,15 @@
 <template>
 	<section class="">
-
+		
 		<!--Clip-->
 		<div class="embed-responsive embed-responsive-21by9">
-			<iframe :src="clip.embed_url + '&parent=localhost'"></iframe>
+			<iframe :src="clip.embed_url + '&parent=netlify.app'"></iframe>
 		</div>
 		<!--Clip-->
 		<!--Clip Details-->
 		<div class="clip-details d-flex justify-content-between bg-light p-4 align-items-center">
 			<div class="left">
-				<h2 class="text-primary" >{{ clip.broadcaster.display_name }}</h2>
+				<h2 class="text-primary">{{ clip.broadcaster.display_name }}</h2>
 				<div class="avatar avatar-lg mb-2">
 					<img :src="clip.broadcaster.logo" class="rounded-circle">
 				</div>
