@@ -3,7 +3,7 @@
 		
 		<!--Clip-->
 		<div class="embed-responsive embed-responsive-21by9">
-			<iframe :src="clip.embed_url + '&parent=netlify.app'"></iframe>
+			<iframe :src="clip.embed_url + '&parent=twitchy.netlify.app'"></iframe>
 		</div>
 		<!--Clip-->
 		<!--Clip Details-->
