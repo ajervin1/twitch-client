@@ -4,7 +4,7 @@
 		<nav class="navbar navbar-dark bg-light py-3">
 			<!--Logo-->
 			<router-link to="/" class="navbar-brand">
-				<img width="50px" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c540.png" class="">
+				
 				<span class="text-primary font-weight-medium">Twitch</span>
 				<span class="text-primary font-weight-light">Clips</span>
 			</router-link>
